@@ -1,5 +1,5 @@
-//package com.company;
-package sortowaniebatq;
+package com.company;
+//package sortowaniebatq222;
 
 import java.util.Random;
 import java.util.Scanner;
@@ -36,10 +36,10 @@ public class Main {
         //wyswietl tytul i menu wyboru
         System.out.println("\n\nSortowanie");
         System.out.println("#1 Sortowanie przez wstawianie\n");
-        System.out.println("#3 Sortowanie babelkowe\n");
-        System.out.println("#6 Sortowanie szybkie\n");
+        System.out.println("#2 Sortowanie babelkowe\n");
+        System.out.println("#3 Sortowanie szybkie\n");
 
-        System.out.println("Ktoym algorytmem chcesz sortowac ?:");
+        System.out.println("Ktoym algorytmem chcesz sortować, podaj numer ?:");
         String wersja = odczyt.nextLine();
         System.out.println("\n");
 
@@ -73,9 +73,6 @@ public class Main {
         for (int i = 1; i < tablica.length; i++) {
             j = i;
             klucz = tablica[i];
-            //poszukaj miejsca dla aktualnego elementu
-            //szukaj tylko w posortowanej juz częsci tablicy (czyli wsrod elementow o indeksach mniejszych od aktualnego)
-            //przesuwaj element w kiedunku poczatku tablicy tak dlugo, az przed nim jest element większy i nie znajduje sie na poczatku tablicy
             while (j > 0 && tablica[j - 1] > klucz) {
                 tablica[j] = tablica[j - 1];
                 j--;
@@ -86,9 +83,6 @@ public class Main {
 
         return tablica;
     }
-
-    //private static int[] sortujPrzezWybieranie(int[] tablica) {
-
     private static int[] sortujBabelkowo(int[] tablica) {
         int temp, i, zmiana;
 
